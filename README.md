@@ -2,15 +2,10 @@
 This repo consists of vulnerable configuration files, split per configuration type. 
 The files contain various vulnerabilities which Snyk Infrastructure as Code can identify, as well as scripts for setting up demo environments to educate about the challenges and potential security issues in the Infrastructure as Code world.
 
-## Features
-### CloudFormation
-The `./cloudformation` directory contains various vulnerable CloudFormation templates which can be scanned by Snyk
-
 ### Kubernetes
 The `./k8s` directory contains demo-able applications which emphasise why different settings in your configurations files can expose you to security attacks:
 * [Privileged pod](k8s/PrivilegedPod/README.md) - the problem with having a [privileged pod](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged) on your cluster
-* [Resource limitation](k8s/ResourceLimitation/README.md) -the potential problems in case there are no [resource limitations](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container) on your containers
-* [RBAC misconfiguration](k8s/RBAC-Misconfiguration/README.md) - the vulnerabilities one exposes the cluster to by misconfiguring [RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+
 
 To start the demos, you need to follow these steps:
 1. Install and run [minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/#installation).
@@ -25,9 +20,6 @@ To start the demos, you need to follow these steps:
 
 
 This directory also contains various other vulnerable Kubernetes templates under `./k8s/templates`, which can also be scanned by Snyk.
-
-### Terraform
-The `./terraform` directory contains various vulnerable Terraform files.
 
 ## Testing for vulnerabilities
 To scan any of the files and directories in this repo with Snyk, install [snyk](https://github.com/snyk/snyk/) `snyk iac test` either from the main directory or by pointing at each file one by one.
